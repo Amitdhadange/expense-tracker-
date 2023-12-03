@@ -1,0 +1,94 @@
+<%-include("boiler/header")%>
+<%-include("boiler/nav")%>
+<style>
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,body{
+  width: 100%;
+  height: 100%;
+}
+.main{
+    width: 100%;
+    height: 90vh;
+    background-color: #01c372;
+    /* background-image: url(https://d2k5nsl2zxldvw.cloudfront.net/images/illustrations/bg_card-cascade.svg); */
+    background-image: url(https://use.expensify.com/assets/img/bg_homepage-hero--darker.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box{
+    width: 30vw;
+    height: 60vh;
+    background: #019a5a;
+    box-shadow: 10px 10px 10px 10px #0f8b57;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+h2{
+    margin-bottom: 2vh;
+    color:white;
+}
+input{
+    padding: 1.5vw 4vw;
+    border-radius: 10px;
+    border: none;
+    margin: 2vh 0;
+    margin-left: 2vw;
+}
+.btn{
+    display: flex;
+}
+button{
+    padding: 1.2vw 4vw;
+    padding: 1.2vw 4vw;
+    border-radius: 10px;
+    background-color: #02a25f;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.3vw;
+    letter-spacing: .1vw;
+    margin-left: 1vw;
+}
+button:hover{
+    cursor: pointer;
+    border: none;
+    background: #095539;
+}
+button>a{
+    color: white;
+    text-decoration: none;
+}
+
+</style>
+<div class="main">
+    
+    <div class="box">
+        <!-- <h2>Profile</h2> -->
+        <h2>Username:-<%= admin.username%></h2>
+        <h2>Email:-<%= admin.email%></h2>
+        <h2>Password:-<%= admin.password%></h2>
+        <form action="/profile" method="post">
+            
+            <br><br>
+        </form>
+            <div class="btn">
+
+                <button><a href="/update/<%=admin._id%>">Update</a></button>
+                <button><a href="/delete/<%=admin._id%>">Delete</a></button>
+            </div>
+    </div>
+</div>
+            
+
+
+<%-include("boiler/footer")%>

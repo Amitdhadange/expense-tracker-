@@ -1,0 +1,91 @@
+<%-include("boiler/header")%>
+
+
+<style>
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,body{
+  width: 100%;
+  height: 100%;
+}
+.main{
+    width: 100%;
+    height: 100vh;
+    background-image: url(https://use.expensify.com/assets/img/bg_homepage-hero--darker.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box{
+    width: 30vw;
+    height: 60vh;
+    background-color: #02a25f;
+    box-shadow: 10px 10px 10px 10px #0f8b57;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h3{
+    font-size: 1.5vw;
+    margin-top: -vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: whitesmoke;
+    margin-left: 2vw;
+}
+input{
+    padding: 1.5vw 4vw;
+    border-radius: 10px;
+    border: none;
+    margin: 5vh 5vw;
+    transform: translateY(3vh);
+    border: 2px solid #035a36;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.3vw;
+}
+input::placeholder {
+  color: black;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1.3vw;
+}
+button{
+    padding: 1.2vw 4vw;
+    border-radius: 10px;
+    background-color: #02a25f;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.3vw;
+    letter-spacing: .1vw;
+    margin-left: 9vw;
+    transform: translateY(1vh);
+}
+button:hover{
+    cursor: pointer;
+    background: #095539;
+    border: none;
+}
+
+</style>
+<div class="main">
+    
+    <div class="box">
+        <form action="/sendmail" method="post">
+
+            <h3>Enter your Email and tap the send otp.</h3>
+            
+            <input type="email" name="email" placeholder="Email">
+            <br><br>
+            <button>Sent otp</button>
+            </form>
+    </div>
+</div>
+            
+
+
+<%-include("boiler/footer")%>

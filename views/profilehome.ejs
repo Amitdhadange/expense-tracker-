@@ -1,0 +1,165 @@
+<%-include("boiler/header")%>
+<%-include("boiler/nav")%>
+<style>
+  *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,body{
+  width: 100%;
+  height: 100%;
+}
+.main{
+  width: 100%;
+  height: 90vh;
+  background-image: url(https://res.cloudinary.com/rsmglobal/image/fetch/t_default/f_auto/q_auto/https://www.rsm.global/switzerland/sites/default/files/styles/crop_image/public/media/01%20Global%20assets/01_Banners/03_Service%20banners%203840x960px/services%20page%20top%20banner%203840x960px_Private%20Client%20Tax%20Services%20green%2080.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+}
+.main>button{
+  padding: 1.2vw 2vw;
+  border-radius: 10px;
+  background-color: #04613b;
+  border: none;
+  border-radius: 10px;
+  font-size: 1vw;
+  margin: 10px 20px;
+}
+button>a{
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+}
+.mid{
+  width: 60%;
+  height: 70vh;
+  display: grid;
+  /* background-color: #f39696; */
+  grid-template-columns: auto auto auto ;
+  gap: 10px;
+  overflow: scroll; 
+  margin-top: -10vh;
+}
+.mid::-webkit-scrollbar{
+  display: none;
+}
+.box{
+  width: 15vw;
+  height: 25vh;
+  border: 2px solid black;
+  margin-left: 2vw;
+  border-radius: 10px;
+  padding: 10px 10px;
+}
+.btn{
+  display: flex;
+  justify-content: space-around;
+}
+h5{
+  color: #04613b;
+  margin-top: 5vh; 
+  margin-left: -3vw;
+  
+}
+.update{
+  margin-left: 1vw;
+}
+h1{
+  margin: 1vh 17vw;
+  transform: translateY(-9vh);
+  font-family: Arial, Helvetica, sans-serif;
+}
+h4{
+  margin-bottom: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 35px;
+}
+.srch{
+  width: 60vw;
+  height: 10vh;
+  padding: 0vmax 2vmax;
+  transform: translateY(-8vw);
+  margin-left: 32vw;
+  display: flex;
+  align-items: center;
+
+}
+select{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1.2vw;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+input{
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-left: 2vw;
+  margin-right: 2vw;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1.3vw;
+  border: none;
+}
+button{
+  padding: 1vw 4vw;
+  border-radius: 10px;
+  background-color: #04613b;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2vw;
+  font-weight: 600;
+  color: whitesmoke;
+  margin-top: -15px;
+
+}
+button:hover{
+  cursor: pointer;
+}
+</style>
+<div class="main">
+  <button><a href="expenses">Add New Expenses</a></button>
+  <h1>Total: <%= expenses.reduce((ac,cv)=>ac+cv.amount,0)%></h1>
+  
+  <div class="srch">
+    <form action="/filter">
+      <select name="key">
+        <option>Select</option>
+        <option value="amount">Amount</option>
+        <option value="remark">Remark</option>
+        <option value="category">Category</option>
+      </select>
+      <input type="text" name="value" placeholder="Enter search" />
+      <button>Filter</button>
+    </form>
+    
+  </div>
+ <% if (expenses.length===0){ %>
+
+ <%}%>
+ <div class="mid">
+ <% expenses.forEach(function(ex){ %>
+
+  <div class="box">
+    <h4> <b>Amount:-</b> <%= ex.amount%></h4>
+    <h4><b>Remark:-</b> <%= ex.remark%></h4>
+    <h4><b>Category:-</b><%= ex.category%></h4>
+    <div class="btn">
+
+      <h5 class="update"><a href="/exupdate/<%=ex._id%>"><img src="https://cdn2.iconfinder.com/data/icons/files-folders-3/24/files-folders-59-256.png" width="20px" alt=""></a></h5>
+      <h5><a href="/exdelete/<%=ex._id%>"><img src="https://cdn0.iconfinder.com/data/icons/google-material-design-3-0/48/ic_delete_48px-256.png" width="20px" alt=""></a></h5>
+    </div>
+  </div>
+  <%})%>
+  
+</div>
+
+
+
+
+</div>
+
+
+
+
+<%-include("boiler/footer")%>

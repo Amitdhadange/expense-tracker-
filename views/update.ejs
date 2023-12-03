@@ -1,0 +1,87 @@
+<%-include("boiler/header")%>
+
+<style>
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,body{
+  width: 100%;
+  height: 100%;
+}
+.main{
+    width: 100%;
+    height: 100vh;
+    background-color: #01c372;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box{
+    width: 30vw;
+    height: 60vh;
+    background-color: #02a25f;
+    box-shadow: 10px 10px 10px 10px #0f8b57;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+h2{
+    margin-bottom: 2vh;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+}
+input{
+    padding: 1.5vw 4vw;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 2vh;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.3vw;
+    margin-left: 5vw;
+}
+input::placeholder {
+  color: black;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1.3vw;
+}
+button{
+    padding: 1.2vw 4vw;
+    border-radius: 10px;
+    background-color: #02a25f;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.3vw;
+    letter-spacing: .1vw;
+    margin-left: 10vw;
+    margin-top: -2vh;
+}
+button:hover{
+    cursor: pointer;
+    background: #095539;
+    border: none;
+}
+
+</style>
+<div class="main">
+    
+    <div class="box">
+        <h2>Edit Profile</h2>
+        <form action="/update/<%=admin._id%>" method="post">
+            
+          <input type="text" value="<%=admin.username%>" name="username" placeholder="username">
+            <br><br>
+            <input type="email" value="<%=admin.email%>" name="email" placeholder="email">
+            <input type="password" value="<%=admin.password%>" name="password" placeholder="password">
+            <br><br>
+            <button>Save</button>
+            </form>
+    </div>
+</div>
+            
+
+
+<%-include("boiler/footer")%>

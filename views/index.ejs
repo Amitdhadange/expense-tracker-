@@ -1,0 +1,459 @@
+<%-include("boiler/header")%>
+<!-- <%-include("boiler/nav")%> -->
+<style>
+  *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,body{
+  width: 100%;
+  height: 100%;
+}
+.page1{
+  width: 100%;
+  height: 150vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mid{
+  width: 90%;
+  height: 130vh;
+    background-image: url(https://use.expensify.com/assets/img/bg_homepage-hero--darker.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+}
+.nav{
+  width: 100%;
+  height: 10vh;
+  /* background-color:antiquewhite; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 2vw;
+}
+.nav>h1{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 700;
+  color: #fff;
+
+}
+.btn1{
+  width: 30vw;
+  display: flex;
+  /* background-color: #fff; */
+  gap: 2vw;
+}
+.nav>.btn1>button{
+  background: #008c59;
+    border: 1px solid #008c59;
+    border-radius: 52px;
+    color: #fff;
+    /* display: inline-block; */
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 26px;
+    max-width: 178px;
+    outline: none;
+    padding: 10px 20px;
+    text-align: center;
+    width: 100%;
+    margin-top: 5vh;
+}
+
+.nav>.btn1>button:hover{
+  cursor: pointer;
+  background: #174635;
+}
+.nav>.btn1>button>a{
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+.spend{
+  width: 100%;
+  height: 20vh;
+  /* background-color: antiquewhite; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5vh;
+}
+.spend>h1{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 600;
+  font-size: 3rem;
+  color: #fff;
+  margin-top: 5vh;
+}
+.box{
+  width: 100%;
+  height: 40vh;
+  /* background-color: aliceblue; */
+  margin-top: 10vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.track{
+  width: 12%;
+  height: 30vh;
+  background: #0e9161;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.track>h4{
+  color: #fff;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.img1{
+  width: 90%;
+  height: 20vh;
+  background-image: url(https://d2k5nsl2zxldvw.cloudfront.net/images/illustrations/simple-illustration__smartscan.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 2vh;
+}
+.img2{
+  width: 90%;
+  height: 20vh;
+  background-image: url(https://d2k5nsl2zxldvw.cloudfront.net/images/illustrations/simple-illustration__money-receipt.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 2vh;
+}
+.img3{
+  width: 90%;
+  height: 20vh;
+  background-image: url(https://d2k5nsl2zxldvw.cloudfront.net/images/illustrations/simple-illustration__credit-cards.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 2vh;
+}
+.img4{
+  width: 90%;
+  height: 20vh;
+  background-image: url(	https://d2k5nsl2zxldvw.cloudfront.net/images/illustrations/simple-illustration__bank-arrow.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 2vh;
+}
+.img5{
+  width: 90%;
+  height: 20vh;
+  background-image: url(	https://d2k5nsl2zxldvw.cloudfront.net/images/illustrations/simple-illustration__invoice.svg
+);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 2vh;
+}
+.img6{
+  width: 90%;
+  height: 20vh;
+  background-image: url(https://d2k5nsl2zxldvw.cloudfront.net/images/illustrations/simple-illustration__cashenvelope.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 2vh;
+}
+.save{
+  width: 100%;
+  height: 10vh;
+  /* background-color: #fff; */
+  display: flex;
+  justify-content: center;
+  align-items: first baseline;
+}
+.save>h3{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.3rem;
+  color: aliceblue;
+}
+.btn{
+  width: 100%;
+  height: 10vh;
+  /* background-color: #fff; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn>button{
+  padding: 20px 60px;
+  background-color: #008c59;
+  border: 1px solid #008c59;
+  border-radius: 50px;
+}
+.btn>button:hover{
+  cursor: pointer;
+  background: #174635;
+}
+.btn>button>a{
+  color: whitesmoke;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 700;
+  
+
+text-decoration: none;}
+</style>
+<div class="page1">
+<div class="mid">
+  <div class="nav">
+    <h1>Expensify</h1>
+    <div class="btn1">
+      <button><a href="/signup">Sign Up</a></button>
+      <button><a href="/Login">Sign In</a></button>
+    </div>
+  </div>
+  <div class="spend">
+    <h1>Spend 74% less time handling <br> business expenses.</h1>
+  </div>
+    <div class="box">
+      <div class="track">
+        <div class="img1"></div>
+        <h4>Track recipts</h4>
+      </div>
+      <div class="track">
+        <div class="img2"></div>
+        <h4>Manage expenses</h4>
+      </div>
+      <div class="track">
+        <div class="img3"></div>
+        <h4>Corporate card</h4>
+      </div>
+      <div class="track">
+        <div class="img4"></div>
+        <h4>Remiburse emploees</h4>
+      </div>
+      <div class="track">
+        <div class="img5"></div>
+        <h4>Send invoice</h4>
+      </div>
+      <div class="track">
+        <div class="img6"></div>
+        <h4>pay bills</h4>
+    </div>
+  </div>
+  <div class="save">
+    <h3>Save yourself, your team, and your company time and money. Get started with Expensify today.</h3>
+  </div>
+  <div class="btn">
+    <button><a href="/login">GET STARTED</a></button>
+  </div>
+</div>
+</div>
+<!-- ------------------------------------------------------------------- -->
+  <style>
+     *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,body{
+  width: 100%;
+  height: 100%;
+}
+.page2{
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  /* background-color: aliceblue; */
+}
+.box1{
+  width: 20%;
+  height: 70vh;
+  /* background-color: #0e9161; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5vh;
+}
+.box1>h2{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+.box1>ul>li{
+  font-size: 1.5vw;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  list-style: none;
+  margin-bottom: 2vh;
+}
+.box1>ul>li:hover{
+  cursor: pointer;
+  font-weight: 600;
+  color: #0e9161;
+}
+.box2{
+  width: 20%;
+  height: 70vh;
+  /* background-color: #0e9161; */
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
+  align-items: center;
+}
+.box2>h2{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+.box2>ul>li{
+  font-size: 1.5vw;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  list-style: none;
+  margin-bottom: 2vh;
+
+}
+.box2>ul>li:hover{
+  cursor: pointer;
+  font-weight: 600;
+  color: #0e9161;
+}
+.box3{
+  width: 20%;
+  height: 70vh;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5vh;
+}
+.box3>h2{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+.box3>ul>li{
+  font-size: 1.5vw;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  list-style: none;
+  margin-bottom: 2vh;
+
+}
+.box3>ul>li:hover{
+  cursor: pointer;
+  font-weight: 600;
+  color: #0e9161;
+
+}
+.box3>ul>.social{
+  display: flex;
+  gap: 2vw;
+}
+
+.box3>ul>.social>li{
+  font-size: 1.5vw;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  list-style: none;
+  font-size: 2vw;
+}
+.box3>ul>.social>li:hover{
+  cursor: pointer;
+  scale: 1.1;
+  color: #0e9161;
+  font-weight: 600;
+}
+.box4{
+  width: 20%;
+  height: 70vh;
+  /* background-color: #0e9161; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5vh;
+}
+.box4>h2{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+.box4>ul>li{
+  font-size: 1.5vw;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  list-style: none;
+  margin-bottom: 2vh;
+
+}
+.box4>ul>li:hover{
+  cursor: pointer;
+  font-weight: 600;
+  color: #0e9161;
+}
+.box4>h6{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: gray;
+  margin-bottom: -2vh;
+
+}
+
+  </style>
+
+<!-- ------------------------------------------------------------------- -->
+
+
+<div class="page2">
+  <div class="box1">
+    <h2>Fetures</h2>
+    <ul>
+      <li>Expenses Managemnet</li>
+      <li>Spend Management</li>
+      <li>Expense Reports</li>
+      <li>Company Credit Card</li>
+      <li>Travel</li>
+      <li>Payroll</li>
+    </ul>
+
+  </div>
+  <div class="box2">
+    <h2>Resorces</h2>
+    <ul>
+      <li>ExpensifyApproved!</li>
+      <li>Press Kit</li>
+      <li>Support</li>
+      <li>ExpensifyHelp</li>
+      <li>Community</li>
+      <li>Privacy</li>
+    </ul>
+  </div>
+  <div class="box3">
+    <h2>Learn more</h2>
+    <ul>
+      <li>About Expensify</li>
+      <li>Blogs</li>
+      <li>Jobs</li>
+      <li>Expensify.org</li>
+      <li>Investore Relations</li>
+      <ul class="social">
+        <li><i class="ri-whatsapp-line"></i></li>
+        <li><i class="ri-facebook-box-line"></i></li>
+        <li><i class="ri-youtube-line"></i></li>
+        <li><i class="ri-twitter-x-line"></i></li>
+      </ul>
+    </ul>
+  </div>
+  <div class="box4">
+    <h2>Get started</h2>
+    <ul>
+      <li>Create a new account</li>
+      <li>Login</li>
+    </ul>
+      <h6>©2008-2023 Expensify, Inc</h6>
+      <h6>Money transmission is provided by Expensify Payments LLC (NMLS ID:2017010) pursuant to its licenses.</h6>
+  </div>
+</div>
+
+
+
+<%-include("boiler/footer")%>
